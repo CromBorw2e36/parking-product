@@ -22,3 +22,9 @@ gh release create v1.0.2 app1.0.2.zip ^
 - Thêm tính năng xuất báo cáo theo ca
 - Cập nhật giao diện danh sách xe ra vào
 - Tối ưu hiệu suất tải dữ liệu"
+
+## 3. Tính checksum SHA256 (bắt buộc)
+Mở **PowerShell** (không dùng CMD cũ) và chạy lệnh sau:
+
+```powershell
+Get-FileHash app1.0.2.zip -Algorithm SHA256 | Select-Object Hash
