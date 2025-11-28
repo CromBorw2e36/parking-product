@@ -15,16 +15,26 @@
 Mở Command Prompt / PowerShell / Terminal và chạy lệnh sau:
 
 ```bash
-gh release create v1.0.2 app1.0.2.zip ^
-  --title "Version 1.0.2" ^
-  --notes "Các cập nhật trong phiên bản này:
-- Sửa lỗi tính tiền giờ lẻ
-- Thêm tính năng xuất báo cáo theo ca
-- Cập nhật giao diện danh sách xe ra vào
-- Tối ưu hiệu suất tải dữ liệu"
+gh release create v1.0.2v8 app.exe   --title "Version 1.0.2 v2"   --notes "Các cập nhật trong phiên bản này: - Tắt chạy python - Thêm tự động update và kiểm tra"
 
 ## 3. Tính checksum SHA256 (bắt buộc)
 Mở **PowerShell** (không dùng CMD cũ) và chạy lệnh sau:
 
 ```powershell
-Get-FileHash app1.0.2.zip -Algorithm SHA256 | Select-Object Hash
+Get-FileHash app.exe -Algorithm SHA256 | Select-Object Hash
+
+cập nhật lại ở SQL
+```sql
+1023	AppDesktopVersion	1.0.0	Version của phần mềm
+1024	AppUrlRelease	https://github.com/CromBorw2e36/parking-product/releases/download/v1.0.2-final/app.exe	Đường đẫn của file release
+1025	AppChangeLogUrl	https://github.com/CromBorw2e36/parking-product/releases/tag/v1.0.2-final	Nội dung update phần mềm
+1026	AppMandatoryUpdate	true	Giá trị: true/false; Nếu bản sủa lỗi gấp thì true
+1027	AppChecksum	85865A2B866307B1143D4D669B801428BC5FA053289E36546F0BB014572E79BF	NULL
+```
+Cập nhật version ở 
+```bash
+K:\Project\HungDuyCoLTD\HungDuyParking\HungDuyParking\Properties\AssemblyInfo.cs
+
+[assembly: AssemblyVersion("1.0.2.0")]
+[assembly: AssemblyFileVersion("1.0.2.0")]
+```
