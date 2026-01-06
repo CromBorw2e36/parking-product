@@ -15,27 +15,31 @@
 Mở Command Prompt / PowerShell / Terminal và chạy lệnh sau:
 
 ```bash
-gh release create v1.0.10 app.exe   --title "Version 1.0.10"   --notes "Không gắn lại trackId empty sau khi timeout xong"
+gh release create v1.0.x app.exe --title "Version 1.0.x" --notes "Mô tả các thay đổi"
+```
 
-## 3. Tính checksum SHA256 (bắt buộc)
+## 4. Tính checksum SHA256 (bắt buộc)
 Mở **PowerShell** (không dùng CMD cũ) và chạy lệnh sau:
 
 ```powershell
 Get-FileHash app.exe -Algorithm SHA256 | Select-Object Hash
+```
 
-## 4. Cập nhật lại ở SQL
+## 5. Cập nhật lại ở SQL
 
 | Tên cột | Giá trị | Mô tả |
 |---------|---------|-------|
-| AppDesktopVersion | 1.0.0 | Version của phần mềm |
-| AppUrlRelease | https://github.com/CromBorw2e36/parking-product/releases/download/v1.0.3/app.exe | Đường dẫn của file release |
-| AppChangeLogUrl | https://github.com/CromBorw2e36/parking-product/releases/tag/v1.0.3 | Nội dung update phần mềm |
+| AppDesktopVersion | 1.0.x | Version của phần mềm |
+| AppUrlRelease | https://github.com/[username]/[repo]/releases/download/v1.0.x/app.exe | Đường dẫn của file release |
+| AppChangeLogUrl | https://github.com/[username]/[repo]/releases/tag/v1.0.x | Nội dung update phần mềm |
 | AppMandatoryUpdate | true | Giá trị: true/false; Nếu bản sửa lỗi gấp thì true |
-| AppChecksum | 85865A2B866307B1143D4D669B801428BC5FA053289E36546F0BB014572E79BF | Mã checksum SHA256 |
-Cập nhật version ở 
-```bash
-K:\Project\HungDuyCoLTD\HungDuyParking\HungDuyParking\Properties\AssemblyInfo.cs
+| AppChecksum | [SHA256_HASH] | Mã checksum SHA256 |
 
-[assembly: AssemblyVersion("1.0.2.0")]
-[assembly: AssemblyFileVersion("1.0.2.0")]
+## 6. Cập nhật version trong source code
+
+Cập nhật version trong file AssemblyInfo:
+File Name: AssemblyInfo.cs
+```csharp
+[assembly: AssemblyVersion("1.0.x.0")]
+[assembly: AssemblyFileVersion("1.0.x.0")]
 ```
