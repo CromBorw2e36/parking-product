@@ -1,3 +1,6 @@
+## ĐƯỜNG DÃN CLIENT DOWNLOAD PHẦN MỀM BÃI XE KHI CÓ VERSION MỚI
+## LƯU Ý: CHUYỂN REPO SANG PUBLIC
+
 # Hướng dẫn tạo và upload bản Release mới
 
 ## 1. Build file .exe bằng Inno Setup
