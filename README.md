@@ -15,7 +15,7 @@
 Mở Command Prompt / PowerShell / Terminal và chạy lệnh sau:
 
 ```bash
-gh release create v1.0.x app.exe --title "Version 1.0.x" --notes "Mô tả các thay đổi"
+gh release create v1.0.17 app.exe --title "Version 1.0.17" --notes "Bản revert của từ version 16 -> 11"
 ```
 
 ## 4. Tính checksum SHA256 (bắt buộc)
