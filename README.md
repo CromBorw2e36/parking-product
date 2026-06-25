@@ -18,8 +18,22 @@
 Mở Command Prompt / PowerShell / Terminal và chạy lệnh sau:
 
 ```bash
-gh release create v1.0.17 app.exe --title "Version 1.0.17" --notes "Bản revert của từ version 16 -> 11"
+gh release create v1.0.27 app.exe `
+  --title "Version 1.0.27" `
+  --notes "🚀 Cập nhật tính năng mới:
+- Cập nhật phần mềm từ xa: server đẩy lệnh qua SignalR, máy tự tải & cài bản mới (không cần thao tác tay).
+- Sửa lỗi hộp thoại cập nhật hiện lặp nhiều lần (đăng ký sự kiện đúng 1 lần).
+- Gửi trackId 1 lần, tránh trùng lặp.
+- Cải tiến giao diện: màn hình lịch sử, crop ảnh, panel làn/quẹt thẻ."
 ```
+
+Hoặc commit theo file mô tả
+```bash
+gh release create v1.0.27 app.exe `
+  --title "v1.0.27 – Cập nhật từ xa, đa làn quẹt thẻ & tối ưu OCR" `
+  --notes-file RELEASE_NOTES.md
+```
+
 
 ## 4. Tính checksum SHA256 (bắt buộc)
 Mở **PowerShell** (không dùng CMD cũ) và chạy lệnh sau:
